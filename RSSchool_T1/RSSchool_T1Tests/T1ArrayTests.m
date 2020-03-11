@@ -15,7 +15,7 @@
 
 - (void)test1 {
     NSArray *array = @[@1, @2, @2, @9, @93, @2, @6, @9, @6, @10];
-    NSArray *result = @[@1, @2, @2, @2, @6, @9, @6, @10];
+    NSArray *result = @[@1, @2, @2, @2, @6, @9, @6, @10]; 
     bool flag = [result isEqualToArray:[[T1Array new] convertToHappy: array]];
     XCTAssertTrue(flag);
 }
