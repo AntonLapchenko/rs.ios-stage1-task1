@@ -4,6 +4,7 @@
 
 - (NSArray *)convertToHappy:(NSArray *)sadArray {
     NSMutableArray *resultArray = [[NSMutableArray alloc] initWithArray:sadArray];
+    
     for (NSUInteger i = 1; resultArray.count; i++) {
         
         NSInteger startPoint = [resultArray[i] intValue];
@@ -14,7 +15,6 @@
         }
         if ( i == [resultArray count] - 2)
             break;
-        
     }
     
     return resultArray;
