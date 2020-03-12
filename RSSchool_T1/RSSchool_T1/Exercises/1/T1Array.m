@@ -14,7 +14,7 @@
     while (isDeletedItem == YES) {
         isDeletedItem = NO;
         for (NSInteger i = 1; i < resultArray.count-1; i++) {
-            middleItem = [resultArray[i] intValue];
+            middleItem = [resultArray[i] integerValue];
             sum = [resultArray[i-1] integerValue] + [resultArray[i+1] integerValue];
             if (sum <= middleItem) {
                 [resultArray removeObjectAtIndex:i];
