@@ -22,7 +22,6 @@
             }
         }
     }
-    
     return [NSArray arrayWithArray:resultArray];
 }
 @end

@@ -10,8 +10,7 @@
     if ([sum intValue] == brianAmount / 2) {
         return @"Bon Appetit";
     } else {
-        NSString *result = [NSString stringWithFormat:@"%ld",[sum intValue] - brianAmount / 2];
-        return result;
+        return [NSString stringWithFormat:@"%ld",[sum intValue] - brianAmount / 2];
     }
 }
 @end
