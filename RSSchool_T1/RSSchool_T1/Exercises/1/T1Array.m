@@ -3,21 +3,26 @@
 @implementation T1Array
 
 - (NSArray *)convertToHappy:(NSArray *)sadArray {
+    if (!sadArray.count) {
+        return @[];
+    }
     NSMutableArray *resultArray = [[NSMutableArray alloc] initWithArray:sadArray];
+    BOOL isDeletedItem = YES;
+    NSInteger middleItem = 0;
+    NSInteger sum = 0;
     
-    for (NSUInteger i = 1; resultArray.count; i++) {
-        
-        NSInteger startPoint = [resultArray[i] intValue];
-        NSInteger sum = [resultArray[i-1] intValue] + [resultArray[i+1] intValue];
-        if (startPoint > sum) {
-            [resultArray removeObject: resultArray[i]];
-            i -= 1;
+    while (isDeletedItem == YES) {
+        isDeletedItem = NO;
+        for (NSInteger i = 1; i < resultArray.count-1; i++) {
+            middleItem = [resultArray[i] intValue];
+            sum = [resultArray[i-1] integerValue] + [resultArray[i+1] integerValue];
+            if (sum <= middleItem) {
+                [resultArray removeObjectAtIndex:i];
+                isDeletedItem = YES;
+            }
         }
-        if ( i == [resultArray count] - 2)
-            break;
     }
     
-    return resultArray;
+    return [NSArray arrayWithArray:resultArray];
 }
-
 @end
